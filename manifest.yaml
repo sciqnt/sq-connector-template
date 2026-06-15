@@ -1,0 +1,20 @@
+# <rename> — connector manifest. Fill in as you build.
+name: sq-example
+kind: source                 # source (broker/exchange/provider)
+risk_tier: read              # read-only until an execute flavour is added + trust-tiered
+status: scaffold             # scaffold → proof (fixture-green) → v1 (real-creds run)
+endorsed: false              # not sciqnt-endorsed; trust is earned by conformance
+disclaimer: NOTICE.md
+schema_version: 0
+broker: Example
+contract: ">=0,<1"           # the sciqnt-contract major this connector conforms to
+asset_classes: []            # e.g. [STOCK], [CRYPTO], [EVENT]
+flavours:
+  # api:
+  #   risk: official         # official | reverse-engineered
+  #   needs_credentials: true
+capabilities:
+  read: []                   # e.g. live_positions, live_cash
+  execute: []                # separate, higher trust tier — leave empty for read connectors
+known_quirks: FINDINGS.md
+license: MIT

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sciqnt-example"          # rename: sciqnt-<source>
+version = "0.0.0"
+description = "sciqnt connector (template) — map a source into the canonical schema"
+readme = "FINDINGS.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+# Depend on the published contract once sq-contract is released; during the transition
+# the canonical schema + conformance live in the sciqnt/sciqnt monorepo.
+# dependencies = ["sciqnt-contract>=0,<1"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
