@@ -1,0 +1,11 @@
+# Turns a Renovate contract-bump PR into a MIGRATED PR (activates once sq-contract
+# is published + Renovate is on). Needs the org agent secrets.
+name: dependency-migration
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  migrate:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'dependencies') }}
+    uses: sciqnt/sq-constitution/.github/workflows/dependency-migration.yml@v1
+    secrets: inherit

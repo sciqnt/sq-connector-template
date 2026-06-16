@@ -1,0 +1,4 @@
+# Default owner for this connector repo. Replace with the connector's maintainer(s)
+# or a team. The contract-dialect file is the highest-value review surface.
+* @DavideGCosta
+/src/*/canonical.py @DavideGCosta
